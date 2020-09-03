@@ -12,6 +12,10 @@ describe DockingStation do
     it 'expects true when working is called on a Bike' do
       expect(subject.release_bike.working?).to eq(true)
     end
-    
+  end
+  describe 'docking_bike' do
+    it 'responds to docking a bike to a docking station' do
+      expect(subject).to respond_to(:docking_bike) #calling docking bike on the instance of docking station
+    end
   end
 end
