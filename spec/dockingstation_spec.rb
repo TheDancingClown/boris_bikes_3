@@ -10,10 +10,18 @@ describe DockingStation do
     end
 
     it 'expects true when working is called on a Bike' do
-      expect(subject.release_bike.working?).to eq(true)
+      subject = DockingStation.new.dock_bike(Bike.new)
+      expect(subject.working?).to eq(true)
     end
+
+    it 'throws an error when we attempt to release bike but there is no bike' do
+
+      expect {subject.release_bike}.to raise_error("There is no bike!")
+    end
+
   end
-  describe 'docking_bike' do
+
+  describe 'dock_bike' do
     it 'responds to docking a bike to a docking station' do
       expect(subject).to respond_to(:dock_bike) #calling docking bike on the instance of docking station
     end
@@ -23,6 +31,4 @@ describe DockingStation do
     end
 
   end
-
-
 end
