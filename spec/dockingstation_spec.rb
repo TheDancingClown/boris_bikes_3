@@ -15,7 +15,14 @@ describe DockingStation do
   end
   describe 'docking_bike' do
     it 'responds to docking a bike to a docking station' do
-      expect(subject).to respond_to(:docking_bike) #calling docking bike on the instance of docking station
+      expect(subject).to respond_to(:dock_bike) #calling docking bike on the instance of docking station
     end
+    it 'returns back bike object' do
+      bike = Bike.new
+      expect(subject.dock_bike(bike)).to eq(bike)
+    end
+
   end
+
+
 end
