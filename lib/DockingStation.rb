@@ -21,3 +21,7 @@ class Bike
   end
 
 end
+
+class BikeStore
+
+end 
