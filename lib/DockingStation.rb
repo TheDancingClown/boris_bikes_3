@@ -1,9 +1,9 @@
 class DockingStation
 
-  attr_reader :bike
+attr_reader :bike
 
   def release_bike
-    fail "There is no bike!" unless @bike
+    raise "There is no bike!" unless @bike
     @bike
   end
 
